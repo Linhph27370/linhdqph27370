@@ -21,8 +21,29 @@ const restaurant ={
     },
     order: function(starterIndex,mainIndex){
         return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-    }
+    },
+    oderDeLivery: function({starterIndex =1,
+         mainIndex = 0,
+         time = '20:20',
+         address}){
+      console.log(`Order recived! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
+    },
 };
+
+restaurant.oderDeLivery({
+    time : '22:30',
+    address: 'Via del Sole, 21',
+    mainIndex: 2,
+    starterIndex: 2
+});
+restaurant.oderDeLivery({
+    address: 'Via del Sole, 2221',
+    starterIndex: 2,
+});
+restaurant.oderDeLivery({
+    address: 'Via del Sole, 2221',
+    starterIndex: 3,
+});
 
 const { name, openingHours, categories} = restaurant;
 console.log(name,openingHours, categories);
