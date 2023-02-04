@@ -57,7 +57,7 @@ console.log(restaurant.openingHours.mon.open);
 
 // With option
 console.log(restaurant.openingHours.mon?.open);
-console.log(restaurant.openingHours?.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);    
 
 //Example 
 
