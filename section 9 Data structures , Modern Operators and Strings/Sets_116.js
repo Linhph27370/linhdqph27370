@@ -14,7 +14,6 @@ const openingHours = {
         open: 0, // Open 24 hours
         close: 24,
     },
-    
 };
 
 const restaurant = {
@@ -45,47 +44,30 @@ const restaurant = {
     },
 };
 
-// // Property NAMES
-// const properties = Object.keys(openingHours);
-// console.log(properties);
+const ordersSet = new Set([
+    'Pasta',
+    'Pizza',
+    'Pizza',
+    'Risotto',
+    'Pasta',
+    'Pizza',
+]);
+console.log(ordersSet);
+console.log(new Set('Jonas'));
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+// ordersSet.clear();
+console.log(ordersSet);
 
-// let openStr = `We are open on ${properties.length} days: `;
-// for (const day of properties) {
-//     openStr += `${day}, `;
-// }
-// console.log(openStr);
+for (const order of ordersSet) console.log(order);
 
-// // Property VALUES
-// const values = Object.values(openingHours);
-// console.log(values);
-
-// // Entire object
-// Object.entries(openingHours);
-// // console.log(entries);
-
-// // [key, value]
-// for (const [day, {open, close}] of entries) {
-//     console.log(`On ${day} we open at ${open} and close at ${close}`);
-// }
-for(const day of Object.keys(openingHours)){
-    console.log(day)
-}
-
-const properties = Object.keys(openingHours);
-console.log(properties);
-
-let openStr=`We are open on ${properties.length} days :`;
-for(const day of properties){
-    openStr += `${day} ,`
-}
-console.log(openStr);
-
-const values = Object.values(openingHours);
-console.log(values);
-
-const entries = Object.entries(openingHours);
-console.log(entries);
-
-for( const x of entries){
-    console.log(`On ${x[0]} we open at ${x[1].open} and close at ${x[1].close}`)
-}
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size);
+console.log(new Set('jonasschmedtmann').size);
